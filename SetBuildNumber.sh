@@ -12,7 +12,7 @@ if [ "$CURRENT_BRANCH_NAME" == "HEAD" ]; then
 fi 
 
 NUMBER_OF_COMMITS="$(git rev-list $CURRENT_BRANCH_NAME | wc -l)"
-"$(echo \"##teamcity[setParameter name='env.app_version' value='$NUMBER_OF_COMMITS']\")"
+echo "##teamcity[setParameter name='env.app_version' value='$NUMBER_OF_COMMITS']"
 
 echo "We're on $CURRENT_BRANCH_NAME branch. Set build number to $NUMBER_OF_COMMITS"
 
